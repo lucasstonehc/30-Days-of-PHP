@@ -1,1 +1,54 @@
 
+<?php
+
+//lets go create a simple array in PHP
+
+$tvShows = ["Lucifer", "Vikings", "Game Of Thrones","Outlander"];
+
+//so there are so many ways to print each element inside the array tvShows
+
+//Using interaction for command to print elements
+echo "Using FOR command". PHP_EOL;
+for($i = 0; $i < count($tvShows); $i++){
+    echo $tvShows[$i] . PHP_EOL;
+}
+
+echo "Using FOREACH command". PHP_EOL;;
+foreach($tvShows as $tvShow){
+    echo $tvShow . PHP_EOL;
+}
+
+
+//using association array
+
+$tvShows = ["LCF" => "Lucifer", "VKG" =>"Vikings", "GOT" =>"Game Of Thrones","Outlander"];
+
+echo $tvShows["LCF"]; 
+
+$tvShows = [
+    "Lucifer" => [
+        "Season 1",
+        "Season 2",
+        "Season 3",
+        "Season 4"
+    ],
+    "Vikings" => [
+        "Season 1",
+        "Season 2",
+        "Season 3"
+    ], 
+    "Game Of Thrones"=> [
+        "Season 1",
+        "Season 2",
+        "Season 3",
+        "Season 4",
+        "Season 5",
+        "Season 6"
+    ], 
+];
+
+foreach($tvShows as $tvShow){
+    foreach($tvShow as $season){
+        echo $season. PHP_EOL;
+    }
+}
