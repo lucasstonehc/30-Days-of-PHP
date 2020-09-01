@@ -1,0 +1,47 @@
+So today I understand how PHP implements OOP!
+
+
+
+
+
+
+
+<?php
+
+
+class User
+{
+    private $name;
+    private $email;
+
+    public function __construct($name, $email){
+        $this->name = $name;
+        $this->email = $email;
+    }
+    
+    public function getName(){
+        return $this->name;
+    }
+    public function setName($name){
+        $this->name = $name;
+    }
+    public function getEmail(){
+        return $this->email;
+    }
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+    public function ToString(){
+        return $this->name."Email: ".$this->email.PHP_EOL;
+    }
+}
+
+
+$user = new User("Lucas", "lucas.stone@gmail.com");
+echo $user->ToString();
+
+$user = new User(null,null);
+$user->setName("Jhs");
+$user->setEmail("jhs.ls@gmail.com");
+echo $user->ToString();
