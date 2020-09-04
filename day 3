@@ -1,0 +1,60 @@
+
+
+
+
+
+
+<?php
+
+
+class User
+{
+    protected $name;
+    protected $email;
+
+    public function __construct($name, $email){
+        $this->name = $name;
+        $this->email = $email;
+    }
+    
+    public function getName(){
+        return $this->name;
+    }
+    public function setName($name){
+        $this->name = $name;
+    }
+    public function getEmail(){
+        return $this->email;
+    }
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+    public function ToString(){
+        return $this->name."Email: ".$this->email.PHP_EOL;
+    }
+}
+
+
+class Po extends User{
+    
+    private $card;
+    public function __construct($name, $email, $card){
+        parent::__construct($name, $email);
+        $this->card = $card;
+    }
+    public function setCard($card){
+        $this->card = $card;
+    }
+    public function getCard(){
+        return $this->card;
+    }
+    public function ToString(){
+        return "Meu nome é: ".$this->getName().", meu email é: ".$this->getEmail()." e meu card é ".strval($this->getCard()).PHP_EOL;
+    }
+}
+
+
+$poUser = new Po("Lucas","lucas@gmail.com",25487854);
+echo $poUser->ToString();
+echo "Pretty cool";
