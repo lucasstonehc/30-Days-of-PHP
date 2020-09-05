@@ -1,0 +1,14 @@
+
+$cookie_name = "user";
+$cookie_value = "Lucas";
+$current_time = time();
+$cookie_expires_time = $current_time + 15;
+$cookie_domain = "/";
+setcookie($cookie_name, $cookie_value, $cookie_expires_time, $cookie_domain);
+
+if(!isset($_COOKIE[$cookie_name])){
+     echo "Cookie named '" . $cookie_name . "' is not set!";
+}else{
+     echo "Cookie '" . $cookie_name . "' is set!<br>";
+     echo "Value is: " . $_COOKIE[$cookie_name];
+}
